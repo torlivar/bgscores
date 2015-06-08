@@ -1,4 +1,4 @@
 Template.summary.helpers({
-  homescore: function() {return Meteor.call("scores", "H"); },
-  awayscore: function() {return Meteor.call("scores", "A"); }
+  homescore: function() {return Matches.find({winner:"H"}).count(); },
+  awayscore: function() {return Matches.find({winner:"A"}).count(); }
 })
